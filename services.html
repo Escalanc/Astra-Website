@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Astra | Services</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                orange: '#ff6b35',
+                orangeDark: '#e85a28',
+                text: '#f3f4f6',
+                textMuted: '#9ca3af',
+                bg: '#050505',
+                card: 'rgba(20, 20, 20, 0.6)',
+                border: 'rgba(255, 255, 255, 0.1)',
+              },
+            },
+            backgroundImage: {
+              cosmic:
+                "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop')",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #f3f4f6;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: #ff6b35;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-link.active::after {
+        opacity: 1;
+      }
+
+      .bg-overlay {
+        background: radial-gradient(
+          circle at 70% 50%,
+          rgba(255, 107, 53, 0.15) 0%,
+          rgba(5, 5, 5, 0.95) 60%,
+          #050505 100%
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-brand-orange selection:text-white"
+  >
+    <div class="fixed inset-0 z-0 pointer-events-none">
+      <div
+        class="absolute inset-0 bg-cosmic bg-cover bg-center opacity-60 mix-blend-screen"
+        style="transform: scale(1.1); filter: contrast(1.2) saturate(1.5)"
+      ></div>
+      <div class="absolute inset-0 bg-overlay"></div>
+    </div>
+
+    <header
+      class="relative z-50 w-full py-6 px-6 md:px-12 lg:px-24 flex items-center justify-between"
+    >
+      <a class="flex items-center gap-3 group" href="index.html">
+        <img
+          class="h-72 w-auto object-contain"
+          src="images/astra design.png"
+          alt="Astra logo"
+        />
+      </a>
+      <nav class="hidden md:flex items-center gap-10">
+        <a
+          class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
+          href="index.html"
+          >Landing</a
+        >
+        <a
+          class="nav-link active text-sm font-medium text-white tracking-wide"
+          href="services.html"
+          >Services</a
+        >
+        <a
+          class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
+          href="pricing.html"
+          >Pricing</a
+        >
+        <a
+          class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
+          href="contact.html"
+          >Contact</a
+        >
+      </nav>
+      <a
+        class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:text-white transition-colors"
+        href="contact.html"
+      >
+        Start a project
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></path>
+        </svg>
+      </a>
+      <button class="md:hidden text-white p-2" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M4 6h16M4 12h16M4 18h16"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></path>
+        </svg>
+      </button>
+    </header>
+
+    <main class="relative z-10 flex-grow px-6 md:px-12 lg:px-24 py-24">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div class="max-w-xl">
+          <div class="text-xs font-bold tracking-widest text-brand-orange uppercase mb-6">
+            Services
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-8">
+            Solutions <br />
+            that scale.
+          </h1>
+          <p class="text-brand-textMuted text-lg max-w-md leading-relaxed">
+            From strategy to scale, we build digital products and experiences that drive real
+            impact.
+          </p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a
+            class="flex items-start gap-6 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm group hover:bg-white/10 transition-colors"
+            href="contact.html"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="text-brand-orange"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-xl font-semibold mb-2">Product Strategy</h3>
+              <p class="text-brand-textMuted text-sm leading-relaxed">
+                We help you define your vision, validate ideas, and build a roadmap for success.
+              </p>
+            </div>
+            <div
+              class="pt-2 text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 duration-300"
+            >
+              &rarr;
+            </div>
+          </a>
+          <a
+            class="flex items-start gap-6 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm group hover:bg-white/10 transition-colors"
+            href="contact.html"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="text-brand-orange"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-xl font-semibold mb-2">Design &amp; Development</h3>
+              <p class="text-brand-textMuted text-sm leading-relaxed">
+                We design and build fast, scalable products with clean code and exceptional UX.
+              </p>
+            </div>
+            <div
+              class="pt-2 text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 duration-300"
+            >
+              &rarr;
+            </div>
+          </a>
+          <a
+            class="flex items-start gap-6 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm group hover:bg-white/10 transition-colors"
+            href="contact.html"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="text-brand-orange"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <line x1="18" x2="18" y1="20" y2="10"></line>
+                <line x1="12" x2="12" y1="20" y2="4"></line>
+                <line x1="6" x2="6" y1="20" y2="14"></line>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-xl font-semibold mb-2">Growth &amp; Scale</h3>
+              <p class="text-brand-textMuted text-sm leading-relaxed">
+                From data-driven insights to performance optimization, we help you grow sustainably.
+              </p>
+            </div>
+            <div
+              class="pt-2 text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 duration-300"
+            >
+              &rarr;
+            </div>
+          </a>
+          <a
+            class="flex items-start gap-6 p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm group hover:bg-white/10 transition-colors"
+            href="contact.html"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-black/40 border border-white/10 flex items-center justify-center shrink-0"
+            >
+              <svg
+                class="text-brand-orange"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="24"
+              >
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path
+                  d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex-grow">
+              <h3 class="text-xl font-semibold mb-2">Support &amp; Maintain</h3>
+              <p class="text-brand-textMuted text-sm leading-relaxed">
+                Ongoing support and maintenance to keep your product reliable, secure, and up to date.
+              </p>
+            </div>
+            <div
+              class="pt-2 text-brand-orange opacity-0 group-hover:opacity-100 transition-opacity transform -translate-x-2 group-hover:translate-x-0 duration-300"
+            >
+              &rarr;
+            </div>
+          </a>
+          <div class="mt-8 pt-8 border-t border-white/10 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+              <div class="w-2 h-2 rounded-full bg-brand-orange shadow-[0_0_10px_#ff6b35]"></div>
+              <div>
+                <h4 class="font-medium">Have a unique challenge?</h4>
+                <p class="text-sm text-brand-textMuted">Let&#39;s build something tailored to your needs.</p>
+              </div>
+            </div>
+            <a
+              class="text-brand-orange text-sm font-medium flex items-center gap-2 hover:opacity-80 transition-opacity"
+              href="contact.html"
+            >
+              Let&#39;s talk &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="relative z-10 px-6 md:px-12 lg:px-24 pb-10">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-white/10 pt-8"
+      >
+        <div class="text-sm text-brand-textMuted">Astra Product Studio. All rights reserved.</div>
+        <div class="flex items-center gap-6 text-sm text-brand-textMuted">
+          <a class="hover:text-white transition-colors" href="index.html">Landing</a>
+          <a class="hover:text-white transition-colors" href="pricing.html">Pricing</a>
+          <a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

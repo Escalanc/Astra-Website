@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Astra | Pricing</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                orange: '#ff6b35',
+                orangeDark: '#e85a28',
+                text: '#f3f4f6',
+                textMuted: '#9ca3af',
+                bg: '#050505',
+                card: 'rgba(20, 20, 20, 0.6)',
+                border: 'rgba(255, 255, 255, 0.1)',
+              },
+            },
+            backgroundImage: {
+              cosmic:
+                "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=2000&auto=format&fit=crop')",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #f3f4f6;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: #ff6b35;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-link.active::after {
+        opacity: 1;
+      }
+
+      .glass-panel {
+        background: linear-gradient(
+          180deg,
+          rgba(20, 20, 20, 0.4) 0%,
+          rgba(10, 10, 10, 0.8) 100%
+        );
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .bg-overlay {
+        background: radial-gradient(
+          circle at 70% 50%,
+          rgba(255, 107, 53, 0.15) 0%,
+          rgba(5, 5, 5, 0.95) 60%,
+          #050505 100%
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-brand-orange selection:text-white"
+  >
+    <div class="fixed inset-0 z-0 pointer-events-none">
+      <div
+        class="absolute inset-0 bg-cosmic bg-cover bg-center opacity-60 mix-blend-screen"
+        style="transform: scale(1.1); filter: contrast(1.2) saturate(1.5)"
+      ></div>
+      <div class="absolute inset-0 bg-overlay"></div>
+    </div>
+
+    <header
+      class="relative z-50 w-full py-6 px-6 md:px-12 lg:px-24 flex items-center justify-between"
+    >
+      <a class="flex items-center gap-3 group" href="index.html">
+        <img
+          class="h-72 w-auto object-contain"
+          src="images/astra design.png"
+          alt="Astra logo"
+        />
+      </a>
+      <nav class="hidden md:flex items-center gap-10">
+        <a
+          class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
+          href="index.html"
+          >Landing</a
+        >
+        <a
+          class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
+          href="services.html"
+          >Services</a
+        >
+        <a
+          class="nav-link active text-sm font-medium text-white tracking-wide"
+          href="pricing.html"
+          >Pricing</a
+        >
+        <a
+          class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
+          href="contact.html"
+          >Contact</a
+        >
+      </nav>
+      <a
+        class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:text-white transition-colors"
+        href="contact.html"
+      >
+        Start a project
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></path>
+        </svg>
+      </a>
+      <button class="md:hidden text-white p-2" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            d="M4 6h16M4 12h16M4 18h16"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          ></path>
+        </svg>
+      </button>
+    </header>
+
+    <main class="relative z-10 flex-grow px-6 md:px-12 lg:px-24 py-24">
+      <div class="max-w-7xl mx-auto">
+        <div class="max-w-2xl mb-16">
+          <p class="text-brand-orange text-xs font-bold tracking-widest uppercase mb-4">Pricing</p>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
+            Simple pricing.<br />
+            Real value.
+          </h1>
+          <p class="text-brand-textMuted text-lg">
+            Choose the plan that fits your journey. Upgrade or cancel anytime.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
+          <div
+            class="glass-panel rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:border-white/20 transition-all"
+          >
+            <div class="mb-8">
+              <h3 class="text-2xl font-medium mb-2">Starter</h3>
+              <p class="text-brand-textMuted text-sm mb-6 h-10">Perfect for startups<br />and small projects.</p>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-semibold">$49</span>
+                <span class="text-brand-textMuted text-sm">/mo</span>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/10 mb-8"></div>
+            <ul class="space-y-4 mb-10 flex-grow text-sm text-brand-textMuted">
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Up to 3 projects
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Basic analytics
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Email support
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Community access
+              </li>
+            </ul>
+            <button
+              class="w-full py-3 px-4 rounded border border-white/20 text-white hover:bg-white/5 transition-colors text-sm font-medium mt-auto"
+            >
+              Get Started
+            </button>
+          </div>
+          <div
+            class="glass-panel rounded-2xl p-8 flex flex-col relative overflow-hidden transform md:-translate-y-4 border border-brand-orange/30"
+          >
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-orange/10 to-transparent pointer-events-none rounded-2xl"></div>
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 bg-brand-orange/20 text-brand-orange text-[10px] font-bold tracking-widest uppercase px-3 py-1 rounded-b-md"
+            >
+              Most Popular
+            </div>
+            <div class="mb-8 mt-4 relative z-10">
+              <h3 class="text-2xl font-medium mb-2">Growth</h3>
+              <p class="text-brand-textMuted text-sm mb-6 h-10">Built for growing<br />teams and businesses.</p>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-semibold">$149</span>
+                <span class="text-brand-textMuted text-sm">/mo</span>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/10 mb-8 relative z-10"></div>
+            <ul class="space-y-4 mb-10 flex-grow text-sm text-brand-textMuted relative z-10">
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Up to 15 projects
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Advanced analytics
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Priority support
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Team collaboration
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                API access
+              </li>
+            </ul>
+            <button
+              class="w-full py-3 px-4 rounded bg-brand-orange text-white hover:bg-brand-orangeDark transition-colors text-sm font-medium mt-auto relative z-10 shadow-[0_0_15px_rgba(255,102,0,0.4)]"
+            >
+              Get Started
+            </button>
+          </div>
+          <div
+            class="glass-panel rounded-2xl p-8 flex flex-col relative overflow-hidden group hover:border-white/20 transition-all"
+          >
+            <div class="mb-8">
+              <h3 class="text-2xl font-medium mb-2">Scale</h3>
+              <p class="text-brand-textMuted text-sm mb-6 h-10">For large teams with<br />advanced needs.</p>
+              <div class="flex items-baseline gap-1">
+                <span class="text-4xl font-semibold">$299</span>
+                <span class="text-brand-textMuted text-sm">/mo</span>
+              </div>
+            </div>
+            <div class="w-full h-px bg-white/10 mb-8"></div>
+            <ul class="space-y-4 mb-10 flex-grow text-sm text-brand-textMuted">
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Unlimited projects
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Advanced analytics
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Dedicated support
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Team collaboration
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                API access
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white">&#10003;</span>
+                Custom integrations
+              </li>
+            </ul>
+            <button
+              class="w-full py-3 px-4 rounded border border-white/20 text-white hover:bg-white/5 transition-colors text-sm font-medium mt-auto"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="relative z-10 px-6 md:px-12 lg:px-24 pb-10">
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-white/10 pt-8"
+      >
+        <div class="text-sm text-brand-textMuted">Astra Product Studio. All rights reserved.</div>
+        <div class="flex items-center gap-6 text-sm text-brand-textMuted">
+          <a class="hover:text-white transition-colors" href="index.html">Landing</a>
+          <a class="hover:text-white transition-colors" href="services.html">Services</a>
+          <a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
