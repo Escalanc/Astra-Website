@@ -88,6 +88,247 @@
           #050505 100%
         );
       }
+
+      .hero-progress {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 30;
+        width: min(13.5rem, 42vw);
+        padding: 0 0.4rem 0.35rem 0;
+        pointer-events: none;
+      }
+
+      .hero-progress__chart {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 1.45rem;
+        padding: 0;
+      }
+
+      .hero-progress__track {
+        position: relative;
+        flex: 1 1 auto;
+        height: 0.4rem;
+        border-radius: 9999px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-progress__fill {
+        width: 0%;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, #ff6b35 0%, #ff874f 55%, #ff9d6d 100%);
+        box-shadow: 0 10px 28px -12px rgba(255, 107, 53, 0.9);
+        transform-origin: left center;
+        transition: width 120ms linear;
+      }
+
+      .hero-progress__value {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5rem;
+        margin-left: 0.45rem;
+        color: #f3f4f6;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.66rem;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0;
+      }
+
+      .scroll-story {
+        position: relative;
+        height: 320vh;
+      }
+
+      .scroll-story__sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at center, rgba(255, 107, 53, 0.18), transparent 40%),
+          linear-gradient(180deg, rgba(5, 5, 5, 0.92), rgba(5, 5, 5, 1));
+      }
+
+      .scroll-story__frame {
+        position: absolute;
+        inset: 0;
+      }
+
+      .scroll-story__frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 32%;
+        transform: scale(1.05);
+        filter: saturate(1.05) contrast(1.08);
+      }
+
+      .scroll-story__veil {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(5, 5, 5, 0.24) 0%, rgba(5, 5, 5, 0.45) 50%, rgba(5, 5, 5, 0.88) 100%),
+          radial-gradient(circle at 50% 75%, rgba(255, 107, 53, 0.18), transparent 34%);
+      }
+
+      .scroll-story__orb {
+        position: absolute;
+        inset: auto auto 12% 50%;
+        width: 22rem;
+        height: 22rem;
+        border-radius: 9999px;
+        background: radial-gradient(circle, rgba(255, 107, 53, 0.26), rgba(255, 107, 53, 0.05) 45%, transparent 72%);
+        transform: translateX(-50%);
+        filter: blur(18px);
+        pointer-events: none;
+      }
+
+      .scroll-story__content {
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .scroll-story__label {
+        position: absolute;
+        top: 4rem;
+        left: 1.5rem;
+        color: #ff6b35;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+
+      .scroll-story__headline {
+        position: absolute;
+        left: 1.5rem;
+        right: 1.5rem;
+        bottom: 3.5rem;
+        max-width: 28rem;
+      }
+
+      .scroll-story__headline h2 {
+        font-size: clamp(2.5rem, 7vw, 5.75rem);
+        line-height: 0.95;
+        font-weight: 300;
+        letter-spacing: -0.04em;
+        color: #ffffff;
+      }
+
+      .story-beat {
+        position: absolute;
+        left: 1.5rem;
+        max-width: 26rem;
+        opacity: 0;
+        transform: translate3d(0, 4.5rem, 0);
+        will-change: transform, opacity;
+      }
+
+      .story-beat--one {
+        top: 24%;
+      }
+
+      .story-beat--two {
+        top: 41%;
+        left: auto;
+        right: 1.5rem;
+        text-align: right;
+      }
+
+      .story-beat--three {
+        top: 58%;
+      }
+
+      .story-beat__eyebrow {
+        color: #ff6b35;
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .story-beat__title {
+        font-size: clamp(1.8rem, 4vw, 3.25rem);
+        line-height: 1;
+        color: #ffffff;
+        margin-bottom: 1rem;
+      }
+
+      .story-beat__body {
+        color: rgba(243, 244, 246, 0.72);
+        font-size: 0.98rem;
+        line-height: 1.8;
+        font-weight: 300;
+      }
+
+      @media (min-width: 768px) {
+        .scroll-story__content,
+        .scroll-story__label,
+        .scroll-story__headline,
+        .story-beat,
+        .story-beat--two {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .scroll-story__label,
+        .scroll-story__headline,
+        .story-beat {
+          left: 3rem;
+        }
+
+        .story-beat--two {
+          left: auto;
+          right: 3rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .scroll-story {
+          height: auto;
+        }
+
+        .scroll-story__sticky {
+          position: relative;
+          height: auto;
+          min-height: 100vh;
+        }
+
+        .story-beat {
+          position: relative;
+          top: auto;
+          left: auto;
+          right: auto;
+          opacity: 1;
+          transform: none;
+          margin: 0 1.5rem 2rem;
+          text-align: left;
+        }
+
+        .scroll-story__headline {
+          position: relative;
+          left: auto;
+          right: auto;
+          bottom: auto;
+          padding: 8rem 1.5rem 3rem;
+        }
+
+        .scroll-story__label {
+          left: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body
@@ -95,7 +336,7 @@
   >
     <div class="fixed inset-0 z-0 pointer-events-none">
       <video
-        class="absolute inset-0 w-full h-full object-cover opacity-60"
+        class="absolute inset-0 w-full h-full object-cover object-[center_8%] opacity-60"
         autoplay
         loop
         muted
@@ -142,7 +383,7 @@
         class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:text-white transition-colors"
         href="contact.html"
       >
-        Start a project
+        Start a Project
         <svg
           class="w-4 h-4"
           fill="none"
@@ -177,64 +418,49 @@
           <div class="flex flex-col max-w-xl pt-10 lg:pt-20">
             <div class="mb-20">
               <p class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase mb-6">
-                About Us
+                Astra Design
               </p>
               <h1
                 class="text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-white mb-8 leading-[1.1]"
               >
-                We build <br />
-                for what&#39;s <br />
-                next.
+                Launch ideas into orbit.
               </h1>
               <p class="text-brand-textMuted text-base md:text-lg leading-relaxed max-w-md font-light">
-                Astra is a product studio and technology partner helping modern businesses
-                launch, scale, and lead with clarity.
+                Astra helps startups and growing businesses design, build, and scale digital products that create lasting momentum. From custom software to websites and internal tools, we build experiences engineered for growth.
               </p>
             </div>
             <div class="w-full h-px bg-gradient-to-r from-brand-border to-transparent mb-12"></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div class="grid grid-cols-1 gap-6 mb-16">
+              <div>
+                <p class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+                  About Us
+                </p>
+                <h2 class="text-xl md:text-2xl font-normal text-white leading-snug">
+                  Built for ambitious companies reaching higher.
+                </h2>
+                <p class="text-brand-textMuted text-sm leading-relaxed font-light mt-4">
+                  We partner with startups, creators, and growing businesses to turn strong ideas into products people actually use. By combining strategy, design, and development, we create digital experiences that are fast, scalable, and built with intention.
+                </p>
+              </div>
               <div>
                 <p class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
                   Our Mission
                 </p>
                 <h2 class="text-xl md:text-2xl font-normal text-white leading-snug">
-                  Empower ambitious teams to turn bold ideas into real-world impact.
+                  Help bold ideas go further.
                 </h2>
-              </div>
-              <div class="md:pt-8">
-                <p class="text-brand-textMuted text-sm leading-relaxed font-light">
-                  We combine strategy, design, and engineering to build digital products that
-                  are fast, scalable, and built to last.
+                <p class="text-brand-textMuted text-sm leading-relaxed font-light mt-4">
+                  Great products create momentum. Our mission is to help ambitious teams move faster by building software that solves real problems, creates better experiences, and scales with confidence.
                 </p>
               </div>
             </div>
             <div class="flex flex-col gap-8">
-              <div class="flex flex-col gap-6">
-                <div class="flex items-baseline gap-4">
-                  <span class="text-4xl font-light text-white">50+</span>
-                  <span class="text-[10px] font-bold tracking-[0.15em] text-brand-orange uppercase"
-                    >Projects Launched</span
-                  >
-                </div>
-                <div class="flex items-baseline gap-4">
-                  <span class="text-4xl font-light text-white">30+</span>
-                  <span class="text-[10px] font-bold tracking-[0.15em] text-brand-orange uppercase"
-                    >Happy Clients</span
-                  >
-                </div>
-                <div class="flex items-baseline gap-4">
-                  <span class="text-4xl font-light text-white">10+</span>
-                  <span class="text-[10px] font-bold tracking-[0.15em] text-brand-orange uppercase"
-                    >Industries Served</span
-                  >
-                </div>
-              </div>
               <div class="mt-4">
                 <a
                   class="group inline-flex items-center gap-3 text-brand-orange hover:text-white transition-colors text-sm font-medium tracking-wide"
                   href="contact.html"
                 >
-                  Let&#39;s build something great
+                  Start a Project
                   <svg
                     class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
                     fill="none"
@@ -255,7 +481,62 @@
           <div class="hidden lg:block relative h-full min-h-[700px]"></div>
         </div>
       </section>
+
+      <section class="scroll-story" aria-label="Astra scroll story">
+        <div class="scroll-story__sticky">
+            <div class="scroll-story__frame">
+              <img
+                id="scroll-story-image"
+                src="images/Scroll Animation/Abstract_space_transition_planet…_202605070013_000.jpg"
+                alt="Abstract space transition over a glowing planetary horizon"
+              />
+            </div>
+          <div class="scroll-story__veil"></div>
+          <div class="scroll-story__orb" id="scroll-story-orb"></div>
+
+          <div class="scroll-story__content">
+            <div class="scroll-story__label">Journey to Launch</div>
+
+            <div class="story-beat story-beat--one" data-start="0.08" data-end="0.34">
+              <p class="story-beat__eyebrow">Orbit</p>
+              <h3 class="story-beat__title">Every breakthrough starts as an idea with potential.</h3>
+              <p class="story-beat__body">
+                We help businesses refine early concepts, identify opportunities, and build a foundation strong enough to grow.
+              </p>
+            </div>
+
+            <div class="story-beat story-beat--two" data-start="0.3" data-end="0.58">
+              <p class="story-beat__eyebrow">Gravity</p>
+              <h3 class="story-beat__title">Great products should naturally pull people in.</h3>
+              <p class="story-beat__body">
+                Through thoughtful design and scalable development, we create experiences customers want to return to.
+              </p>
+            </div>
+
+            <div class="story-beat story-beat--three" data-start="0.54" data-end="0.86">
+              <p class="story-beat__eyebrow">Launch</p>
+              <h3 class="story-beat__title">When everything aligns, momentum takes over.</h3>
+              <p class="story-beat__body">
+                Your product is ready to scale, attract users, and move your business forward.
+              </p>
+            </div>
+
+            <div class="scroll-story__headline" id="scroll-story-headline">
+              <h2>Watch your vision take flight.</h2>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <div class="hero-progress" aria-hidden="true">
+      <div class="hero-progress__chart">
+        <div class="hero-progress__track">
+          <div class="hero-progress__fill" id="hero-progress-fill"></div>
+        </div>
+        <span class="hero-progress__value" id="hero-progress-value">0%</span>
+      </div>
+    </div>
 
     <footer class="relative z-10 px-6 md:px-12 lg:px-24 pb-10">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-white/10 pt-8">
@@ -267,5 +548,97 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (() => {
+        const story = document.querySelector('.scroll-story');
+        const storyImage = document.getElementById('scroll-story-image');
+        const storyOrb = document.getElementById('scroll-story-orb');
+        const storyHeadline = document.getElementById('scroll-story-headline');
+        const heroProgressFill = document.getElementById('hero-progress-fill');
+        const heroProgressValue = document.getElementById('hero-progress-value');
+        const storyBeats = Array.from(document.querySelectorAll('.story-beat'));
+
+        if (!story || !storyImage || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          storyBeats.forEach((beat) => {
+            beat.style.opacity = '1';
+            beat.style.transform = 'translate3d(0, 0, 0)';
+          });
+          return;
+        }
+
+        const frameSources = Array.from({ length: 80 }, (_, index) => {
+          const frameNumber = String(index).padStart(3, '0');
+          return `images/Scroll Animation/Abstract_space_transition_planet…_202605070013_${frameNumber}.jpg`;
+        });
+
+        frameSources.forEach((source, index) => {
+          if (index === 0) return;
+          const preloadImage = new Image();
+          preloadImage.src = source;
+        });
+
+        let currentFrame = 0;
+
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+        const updateStory = () => {
+          const rect = story.getBoundingClientRect();
+          const scrollableDistance = Math.max(story.offsetHeight - window.innerHeight, 1);
+          const rawProgress = -rect.top / scrollableDistance;
+          const progress = clamp(rawProgress, 0, 1);
+          const nextFrame = Math.min(frameSources.length - 1, Math.floor(progress * (frameSources.length - 1)));
+          const pageScrollableDistance = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+          const pageProgress = clamp(window.scrollY / pageScrollableDistance, 0, 1);
+
+          if (nextFrame !== currentFrame) {
+            currentFrame = nextFrame;
+            storyImage.src = frameSources[currentFrame];
+          }
+
+          if (heroProgressFill && heroProgressValue) {
+            heroProgressFill.style.width = `${pageProgress * 100}%`;
+            heroProgressValue.textContent = `${Math.round(pageProgress * 100)}%`;
+          }
+
+          const headlineShift = progress * 18;
+          const headlineOpacity = clamp(1 - progress * 1.35, 0, 1);
+          storyHeadline.style.opacity = String(headlineOpacity);
+          storyHeadline.style.transform = `translate3d(0, ${headlineShift}px, 0)`;
+
+          const orbScale = 1 + progress * 0.28;
+          const orbShift = progress * -40;
+          storyOrb.style.transform = `translateX(-50%) translateY(${orbShift}px) scale(${orbScale})`;
+          storyOrb.style.opacity = String(0.5 + progress * 0.35);
+
+          storyBeats.forEach((beat, index) => {
+            const start = Number(beat.dataset.start || 0);
+            const end = Number(beat.dataset.end || 1);
+            const beatProgress = clamp((progress - start) / (end - start), 0, 1);
+            const visibleStrength = Math.sin(beatProgress * Math.PI);
+            const y = 80 - beatProgress * 110 - index * 6;
+            const x = (index % 2 === 0 ? 1 : -1) * beatProgress * 14;
+
+            beat.style.opacity = String(visibleStrength);
+            beat.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+          });
+        };
+
+        let ticking = false;
+
+        const requestTick = () => {
+          if (ticking) return;
+          ticking = true;
+          window.requestAnimationFrame(() => {
+            updateStory();
+            ticking = false;
+          });
+        };
+
+        updateStory();
+        window.addEventListener('scroll', requestTick, { passive: true });
+        window.addEventListener('resize', requestTick);
+      })();
+    </script>
   </body>
 </html>
