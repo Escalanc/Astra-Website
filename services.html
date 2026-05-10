@@ -89,16 +89,17 @@
     </div>
 
     <header
-      class="relative z-50 w-full py-6 px-6 md:px-12 lg:px-24 flex items-center justify-between"
+      class="relative z-50 w-full px-6 py-6 md:px-12 lg:px-24"
     >
+      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
       <a class="flex items-center gap-3 group" href="index.html">
         <img
-          class="h-72 w-auto object-contain"
+          class="h-20 w-auto object-contain md:h-28 lg:h-36"
           src="images/astra design.png"
           alt="Astra logo"
         />
       </a>
-      <nav class="hidden md:flex items-center gap-10">
+      <nav class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm md:justify-center md:gap-10">
         <a
           class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide"
           href="index.html"
@@ -121,7 +122,7 @@
         >
       </nav>
       <a
-        class="hidden md:inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:text-white transition-colors"
+        class="inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:text-white transition-colors"
         href="contact.html"
       >
         Start a project
@@ -134,20 +135,11 @@
           ></path>
         </svg>
       </a>
-      <button class="md:hidden text-white p-2" aria-label="Open menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            d="M4 6h16M4 12h16M4 18h16"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-          ></path>
-        </svg>
-      </button>
+      </div>
     </header>
 
-    <main class="relative z-10 flex-grow px-6 md:px-12 lg:px-24 py-24">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <main class="relative z-10 flex-grow px-6 py-16 md:px-12 md:py-20 lg:px-24 lg:py-24">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-start">
         <div class="max-w-xl">
           <div class="text-xs font-bold tracking-widest text-brand-orange uppercase mb-6">
             Services
@@ -301,7 +293,7 @@
               &rarr;
             </div>
           </a>
-          <div class="mt-8 pt-8 border-t border-white/10 flex items-center justify-between">
+          <div class="mt-8 pt-8 border-t border-white/10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div class="flex items-center gap-4">
               <div class="w-2 h-2 rounded-full bg-brand-orange shadow-[0_0_10px_#ff6b35]"></div>
               <div>
@@ -324,11 +316,13 @@
       <div
         class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border-t border-white/10 pt-8"
       >
-        <div class="text-sm text-brand-textMuted">Astra Product Studio. All rights reserved.</div>
-        <div class="flex items-center gap-6 text-sm text-brand-textMuted">
+        <div class="text-sm text-brand-textMuted">Astra Web Development. All rights reserved.</div>
+        <div class="flex flex-wrap items-center gap-6 text-sm text-brand-textMuted">
           <a class="hover:text-white transition-colors" href="index.html">Landing</a>
           <a class="hover:text-white transition-colors" href="pricing.html">Pricing</a>
           <a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+          <a class="hover:text-white transition-colors" href="privacy.html">Privacy</a>
+          <a class="hover:text-white transition-colors" href="terms.html">Terms</a>
         </div>
       </div>
     </footer>

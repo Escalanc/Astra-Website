@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Astra | Terms of Service</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                orange: '#ff6b35',
+                orangeDark: '#e85a28',
+                text: '#f3f4f6',
+                textMuted: '#9ca3af',
+                bg: '#050505',
+                border: 'rgba(255, 255, 255, 0.1)',
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top, rgba(255, 107, 53, 0.12), transparent 35%),
+          #050505;
+        color: #f3f4f6;
+      }
+
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: #ff6b35;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-link.active::after {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen antialiased selection:bg-brand-orange selection:text-white">
+    <header class="relative z-50 w-full px-6 py-6 md:px-12 lg:px-24">
+      <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <a class="flex items-center gap-3 group" href="index.html">
+          <img class="h-20 w-auto object-contain md:h-28 lg:h-36" src="images/astra design.png" alt="Astra logo" />
+        </a>
+        <nav class="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm md:justify-center md:gap-10">
+          <a class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide" href="index.html">Landing</a>
+          <a class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide" href="services.html">Services</a>
+          <a class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide" href="pricing.html">Pricing</a>
+          <a class="nav-link text-sm font-medium text-brand-textMuted hover:text-white tracking-wide" href="contact.html">Contact</a>
+          <a class="nav-link active text-sm font-medium text-white tracking-wide" href="terms.html">Terms</a>
+        </nav>
+        <a class="inline-flex items-center gap-2 text-sm font-medium text-brand-orange hover:text-white transition-colors" href="contact.html">
+          Start a project
+        </a>
+      </div>
+    </header>
+
+    <main class="px-6 py-16 md:px-12 lg:px-24">
+      <div class="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12">
+        <p class="mb-4 text-xs font-bold uppercase tracking-[0.3em] text-brand-orange">Terms of Service</p>
+        <h1 class="mb-4 text-4xl font-light text-white md:text-5xl">Terms for using this website.</h1>
+        <p class="mb-10 text-sm text-brand-textMuted">Effective date: May 10, 2026</p>
+
+        <div class="space-y-10 text-brand-textMuted">
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">Use of this site</h2>
+            <p class="leading-7">
+              By using this website, you agree to use it only for lawful purposes and in a way that does not interfere
+              with the website, its security, or other visitors.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">Service inquiries</h2>
+            <p class="leading-7">
+              Submitting a form or contacting Astra Web Development does not guarantee project acceptance, availability,
+              or a future business relationship. All work is subject to separate scope, timeline, and payment agreement.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">Intellectual property</h2>
+            <p class="leading-7">
+              Unless otherwise stated, the content, branding, visuals, and copy on this website are owned by Astra Web
+              Development and may not be copied or reused without permission.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">Third-party services</h2>
+            <p class="leading-7">
+              This website may rely on third-party platforms such as hosting, fonts, analytics, or email services. We
+              are not responsible for outages, policy changes, or behavior controlled by those providers.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">No warranty</h2>
+            <p class="leading-7">
+              This website is provided on an as-is basis without warranties of any kind, whether express or implied, to
+              the extent permitted by law.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">Limitation of liability</h2>
+            <p class="leading-7">
+              Astra Web Development will not be liable for indirect, incidental, or consequential damages arising from
+              use of this website or reliance on information provided here.
+            </p>
+          </section>
+
+          <section>
+            <h2 class="mb-3 text-xl font-medium text-white">Contact</h2>
+            <p class="leading-7">
+              Questions about these terms can be sent to
+              <a class="text-brand-orange hover:text-white" href="mailto:hello@buildwithastra.dev">hello@buildwithastra.dev</a>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="relative z-10 px-6 pb-10 md:px-12 lg:px-24">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 border-t border-white/10 pt-8 md:flex-row md:items-center md:justify-between">
+        <div class="text-sm text-brand-textMuted">Astra Web Development. All rights reserved.</div>
+        <div class="flex flex-wrap items-center gap-6 text-sm text-brand-textMuted">
+          <a class="hover:text-white transition-colors" href="index.html">Landing</a>
+          <a class="hover:text-white transition-colors" href="services.html">Services</a>
+          <a class="hover:text-white transition-colors" href="pricing.html">Pricing</a>
+          <a class="hover:text-white transition-colors" href="contact.html">Contact</a>
+          <a class="hover:text-white transition-colors" href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
