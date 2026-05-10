@@ -1,6 +1,16 @@
 {
-  "rewrites": [
-    { "source": "/favicon.png", "destination": "/favicon.svg" },
-    { "source": "/favicon.ico", "destination": "/favicon.svg" }
+  "version": 2,
+  "builds": [
+    { "src": "api/contact.js", "use": "@vercel/node" },
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" },
+    { "src": "favicon.svg", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/contact", "dest": "/api/contact.js" },
+    { "src": "/favicon.png", "dest": "/favicon.svg" },
+    { "src": "/favicon.ico", "dest": "/favicon.svg" },
+    { "handle": "filesystem" },
+    { "src": "/", "dest": "/index.html" }
   ]
 }
