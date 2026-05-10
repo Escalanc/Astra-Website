@@ -2,6 +2,7 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
 import http from 'node:http';
 import { exec } from 'node:child_process';
+import contactHandler from './api/contact.js';
 
 const host = '127.0.0.1';
 const port = Number(process.env.PORT || 3000);
@@ -21,7 +22,14 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
-  const requestPath = req.url === '/' ? '/index.html' : req.url || '/index.html';
+  const requestUrl = new URL(req.url || '/', `http://${host}:${port}`);
+
+  if (requestUrl.pathname === '/api/contact') {
+    contactHandler(req, res);
+    return;
+  }
+
+  const requestPath = requestUrl.pathname === '/' ? '/index.html' : requestUrl.pathname || '/index.html';
   const safePath = normalize(decodeURIComponent(requestPath)).replace(/^(\.\.[/\\])+/, '');
   const filePath = join(root, safePath);
 
