@@ -297,6 +297,54 @@
       }
 
       @media (max-width: 1279px) {
+        .hero-progress {
+          width: min(9rem, 48vw);
+          padding-right: 0.25rem;
+        }
+
+        .scroll-story__content {
+          max-width: 64rem;
+          padding: 0 1.25rem;
+        }
+
+        .scroll-story__headline {
+          max-width: 21rem;
+          bottom: 2.5rem;
+        }
+
+        .scroll-story__orb {
+          width: 17rem;
+          height: 17rem;
+          inset: auto auto 10% 50%;
+        }
+
+        .story-beat {
+          max-width: 18rem;
+        }
+
+        .story-beat--one {
+          top: 22%;
+        }
+
+        .story-beat--two {
+          top: 42%;
+        }
+
+        .story-beat--three {
+          top: 60%;
+        }
+
+        .story-beat__title {
+          font-size: clamp(1.5rem, 3.8vw, 2.4rem);
+        }
+
+        .story-beat__body {
+          font-size: 0.9rem;
+          line-height: 1.65;
+        }
+      }
+
+      @media (max-width: 767px) {
         .scroll-story {
           height: auto;
         }
@@ -339,17 +387,6 @@
         .story-beat {
           opacity: 1;
           transform: none;
-        }
-
-        .scroll-story__orb {
-          width: 16rem;
-          height: 16rem;
-          inset: auto auto 8% 50%;
-        }
-
-        .hero-progress {
-          width: min(9rem, 48vw);
-          padding-right: 0.25rem;
         }
       }
 
@@ -411,7 +448,7 @@
       <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
       <a class="flex items-center gap-3 group" href="index.html">
         <img
-          class="h-20 w-auto object-contain md:h-28 lg:h-36"
+          class="h-20 w-auto object-contain md:h-28 lg:h-72"
           src="images/astra design.png"
           alt="Astra logo"
         />
@@ -461,17 +498,17 @@
     </header>
 
     <main class="relative z-10 flex-grow">
-      <section id="landing" class="px-6 pt-4 pb-14 md:px-12 md:pt-6 md:pb-20 lg:px-24 lg:pt-6 lg:pb-16">
+      <section id="landing" class="px-6 pt-4 pb-5 md:px-12 md:pt-6 md:pb-8 lg:px-24 lg:pt-4 lg:pb-1">
         <div
-          class="max-w-7xl mx-auto w-full grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-8 items-start"
+          class="max-w-7xl mx-auto w-full grid grid-cols-1 gap-10 lg:min-h-[calc(100vh-3rem)] lg:grid-cols-2 lg:gap-8 lg:items-stretch"
         >
-          <div class="flex flex-col max-w-2xl pt-2 md:pt-4 lg:pt-8">
-            <div class="mb-10 md:mb-12">
+          <div class="flex flex-col max-w-xl pt-2 md:pt-4 lg:min-h-[calc(100vh-3rem)] lg:justify-between lg:pt-0">
+            <div class="mb-8 md:mb-10 lg:mb-0 lg:pt-[18vh]">
               <p class="text-brand-orange text-xs font-bold tracking-[0.2em] uppercase mb-6">
                 Astra Design
               </p>
               <h1
-                class="text-5xl md:text-6xl lg:text-6xl font-light tracking-tight text-white mb-6 leading-[1.05]"
+                class="text-5xl md:text-6xl lg:text-6xl font-light tracking-tight text-white mb-5 leading-[1.02]"
               >
                 Launch ideas into orbit.
               </h1>
@@ -479,56 +516,59 @@
                 Astra helps startups and growing businesses design, build, and scale digital products that create lasting momentum. From custom software to websites and internal tools, we build experiences engineered for growth.
               </p>
             </div>
-            <div class="w-full h-px bg-gradient-to-r from-brand-border to-transparent mb-8"></div>
-            <div class="grid grid-cols-1 gap-5 mb-10 lg:grid-cols-2 lg:gap-6">
+            <div class="grid grid-cols-1 gap-3 lg:pb-0">
               <div>
+                <div class="w-full h-px bg-gradient-to-r from-brand-border to-transparent mb-4 lg:mb-4"></div>
                 <p class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
                   About Us
                 </p>
-                <h2 class="text-lg md:text-xl font-normal text-white leading-snug">
+                <h2 class="text-xl md:text-2xl font-normal text-white leading-snug">
                   Built for ambitious companies reaching higher.
                 </h2>
-                <p class="text-brand-textMuted text-sm leading-relaxed font-light mt-4">
+                <p class="text-brand-textMuted text-sm leading-relaxed font-light mt-3">
                   We partner with startups, creators, and growing businesses to turn strong ideas into products people actually use. By combining strategy, design, and development, we create digital experiences that are fast, scalable, and built with intention.
                 </p>
-              </div>
-              <div>
-                <p class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
-                  Our Mission
-                </p>
-                <h2 class="text-lg md:text-xl font-normal text-white leading-snug">
-                  Help bold ideas go further.
-                </h2>
-                <p class="text-brand-textMuted text-sm leading-relaxed font-light mt-4">
-                  Great products create momentum. Our mission is to help ambitious teams move faster by building software that solves real problems, creates better experiences, and scales with confidence.
-                </p>
-              </div>
-            </div>
-            <div class="flex flex-col gap-4">
-              <div class="mt-4">
-                <a
-                  class="group inline-flex items-center gap-3 text-brand-orange hover:text-white transition-colors text-sm font-medium tracking-wide"
-                  href="contact.html"
-                >
-                  Start a Project
-                  <svg
-                    class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    ></path>
-                  </svg>
-                </a>
               </div>
             </div>
           </div>
           <div class="hidden lg:block relative h-full min-h-[420px]"></div>
+        </div>
+      </section>
+
+      <section class="px-6 pb-16 md:px-12 md:pb-20 lg:px-24 lg:pb-20">
+        <div class="max-w-7xl mx-auto">
+          <div class="max-w-xl pt-1 lg:pt-0">
+            <p class="text-brand-orange text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+              Our Mission
+            </p>
+            <h2 class="text-xl md:text-2xl font-normal text-white leading-snug">
+              Help bold ideas go further.
+            </h2>
+            <p class="text-brand-textMuted text-sm leading-relaxed font-light mt-4">
+              Great products create momentum. Our mission is to help ambitious teams move faster by building software that solves real problems, creates better experiences, and scales with confidence.
+            </p>
+            <div class="mt-8">
+              <a
+                class="group inline-flex items-center gap-3 text-brand-orange hover:text-white transition-colors text-sm font-medium tracking-wide"
+                href="contact.html"
+              >
+                Start a Project
+                <svg
+                  class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -588,7 +628,7 @@
       </div>
     </div>
 
-    <footer class="relative z-20 mt-8 border-t border-white/10 bg-[#050505]/92 px-6 pb-10 pt-8 backdrop-blur-md md:px-12 lg:px-24">
+    <footer class="relative z-30 border-t border-white/10 bg-[#050505] px-6 pb-10 pt-8 md:px-12 lg:px-24">
       <div class="max-w-7xl mx-auto flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div class="text-sm text-brand-textMuted">Astra Web Development. All rights reserved.</div>
         <div class="flex flex-wrap items-center gap-6 text-sm text-brand-textMuted">
@@ -612,7 +652,7 @@
         const storyBeats = Array.from(document.querySelectorAll('.story-beat'));
 
         const useStaticStory = () =>
-          window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 1279px)').matches;
+          window.matchMedia('(prefers-reduced-motion: reduce), (max-width: 767px)').matches;
 
         const setStaticStory = () => {
           storyBeats.forEach((beat) => {
